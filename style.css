@@ -1,0 +1,136 @@
+.pfp {
+    background-color: #2F2FE4;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border-style: solid;
+    border-color: #2F2FE4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 180%;
+    font-weight: bold;
+
+}
+.pfp{
+     color: white;
+    font-family: "Roboto Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+}
+#container1 {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    /* sejajar di tengah secara vertikal */
+    gap: 20px;
+    /* jarak avatar ke teks */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body {
+    background-color: #080616;
+}
+
+/* background blok text & paragraph */
+.box1 {
+    width: 80%;
+    background-color: #162E93;
+    border-width: 2px;
+    border-color: #2F2FE4;
+    border-style: solid;
+    margin-bottom: 15px;
+    border-radius: 15px;
+    padding: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* list bahasa */
+#list {
+    
+    display: flex;
+    gap: 15px;
+    list-style: none;
+}
+
+.fa-brands.fa-css{
+    font-size: 50px;
+    color: purple;
+
+}
+.fa-brands.fa-html5{
+    font-size: 50px;
+    color: #E34F26;
+}
+.fa-brands.fa-java{
+    font-size: 50px;
+    color: #E76F00;
+}
+
+
+/* icon brand */
+.tombol{
+    font-size: 70px
+}
+.fa-brands.fa-instagram {
+
+    background: linear-gradient(45deg, #FEDA75, #FA7E1E, #D62976, #962FBF, #4F5BD5);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+.fa-brands.fa-github{
+    color: white;
+}
+
+.li {
+
+    border: 1px solid #B9E4E8;
+    border-radius: 20px;
+    padding: 8px;
+
+}
+
+
+
+.plinkborder {
+    float: left;
+}
+
+p {
+    color: aliceblue;
+    font-family: "Roboto Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+h1 {
+    color: #B9E4E8;
+    font-family: "Roboto Mono", monospace;
+    font-weight: bolder;
+    font-style: normal;
+}
+
+h2 {
+    color: #B9E4E8;
+    font-family: "Roboto Mono", monospace;
+    font-weight: bold;
+    font-style: normal;
+}
+
+h3 {
+    color: #B9E4E8;
+    font-family: "Roboto Mono", monospace;
+    font-weight: bold;
+    font-style: normal;
+}
+
+li {
+    color: #B9E4E8;
+    font-family: "Roboto Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+}
