@@ -1,76 +1,252 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Profil pribadi Akhtar Fauzan, mahasiswa Teknik Informatika Universitas Sulawesi Barat yang berfokus pada pengembangan web modern, OOP Java, dan Linux."
+    />
     <title>Akhtar Fauzan - Profil Pribadi</title>
-    <link rel="stylesheet" href="style.css">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <script src="https://kit.fontawesome.com/9440dabee4.js" crossorigin="anonymous"></script>
+    <!-- Terapkan tema sebelum halaman tampil, supaya tidak berkedip -->
+    <script>
+      (function () {
+        var root = document.documentElement;
+        root.classList.add("js");
+        var theme = null;
+        try {
+          theme = localStorage.getItem("theme");
+        } catch (e) {}
+        if (theme !== "light" && theme !== "dark") {
+          theme = window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light";
+        }
+        root.setAttribute("data-theme", theme);
+      })();
+    </script>
 
-</head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&family=Roboto+Mono:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/9440dabee4.js"
+      crossorigin="anonymous"
+    ></script>
 
-<body>
-    <div class="halaman">
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
 
+  <body>
+    <a class="skip" href="#main">Lewati ke konten</a>
 
-        <div id="container1">
-            <div class="pfp">AF</div>
-            <div class="id">
-                <h1>Akhtar Fauzan</h1>
-                <p>Mahasiswa Informatika, semester 1</p>
+    <!-- ===== Navbar ===== -->
+    <header class="nav">
+      <div class="nav__inner">
+        <a class="nav__brand" href="#beranda" aria-label="Kembali ke atas">Home</a>
+
+        <button
+          class="icon-btn theme-toggle"
+          id="theme-toggle"
+          type="button"
+          aria-label="Ganti tema terang atau gelap"
+        >
+          <i class="fa-solid fa-moon i-moon" aria-hidden="true"></i>
+          <i class="fa-solid fa-sun i-sun" aria-hidden="true"></i>
+        </button>
+
+        <button
+          class="icon-btn nav__toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="menu"
+          aria-label="Buka menu"
+        >
+          <i class="fa-solid fa-bars" aria-hidden="true"></i>
+        </button>
+
+        <nav id="menu" class="nav__menu" aria-label="Menu utama">
+          <ul>
+            <li><a href="#tentang">Tentang</a></li>
+            <li><a href="#skill">Skill</a></li>
+            <li><a href="#proyek">Proyek</a></li>
+            <li><a href="#github">GitHub</a></li>
+            <li><a href="#kontak">Kontak</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- ===== Beranda ===== -->
+      <section class="hero" id="beranda">
+        <div class="container hero__inner">
+          <img
+            class="avatar"
+            src="foto.jpg"
+            width="400"
+            height="400"
+            alt="Foto Akhtar Fauzan"
+          />
+
+          <h1 class="hero__name">
+            <span class="sr-only">Akhtar Fauzan</span>
+            <span class="typed-ghost" aria-hidden="true">Akhtar Fauzan</span>
+            <span
+              class="typed"
+              id="typed"
+              data-text="Akhtar Fauzan"
+              aria-hidden="true"
+            ></span>
+          </h1>
+
+          <p class="hero__role">
+            Mahasiswa Teknik Informatika, Universitas Sulawesi Barat
+          </p>
+
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#proyek">Lihat proyek</a>
+            <a class="btn" href="#kontak">Hubungi saya</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== Tentang ===== -->
+      <section class="section" id="tentang" aria-labelledby="tentang-title">
+        <div class="container section__grid">
+          <h2 class="section__title" id="tentang-title">Tentang saya</h2>
+          <div class="section__body reveal">
+            <p>
+              Halo, saya Akhtar Fauzan, mahasiswa Teknik Informatika Universitas
+              Sulawesi Barat yang berfokus mendalami pengembangan web modern,
+              Object-Oriented Programming (OOP) berbasis Java, serta
+              pemanfaatan Linux. Saya antusias menggabungkan logika pemrograman
+              yang kuat dengan antarmuka yang bersih untuk membangun solusi
+              digital yang fungsional dan berdampak.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== Skill ===== -->
+      <section class="section" id="skill" aria-labelledby="skill-title">
+        <div class="container section__grid">
+          <h2 class="section__title" id="skill-title">Bahasa yang diketahui</h2>
+          <ul class="section__body skills">
+            <li class="skill reveal" style="--i: 0">
+              <i class="fa-brands fa-html5" aria-hidden="true"></i>
+              <span>HTML</span>
+            </li>
+            <li class="skill reveal" style="--i: 1">
+              <i class="fa-brands fa-css" aria-hidden="true"></i>
+              <span>CSS</span>
+            </li>
+            <li class="skill reveal" style="--i: 2">
+              <i class="fa-brands fa-java" aria-hidden="true"></i>
+              <span>Java</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ===== Proyek ===== -->
+      <section class="section" id="proyek" aria-labelledby="proyek-title">
+        <div class="container section__grid">
+          <h2 class="section__title" id="proyek-title">Proyek</h2>
+          <div class="section__body">
+            <article class="project reveal">
+              <h3>Personal web</h3>
+              <p>Proyek HTML &amp; CSS pertama, dibuat dengan layout Flexbox.</p>
+              <ul class="tags" aria-label="Teknologi">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>Flexbox</li>
+              </ul>
+            </article>
+
+            <article class="project reveal">
+              <h3>Sistem ATM Java</h3>
+              <p>Proyek Java OOP dengan enkapsulasi.</p>
+              <ul class="tags" aria-label="Teknologi">
+                <li>Java</li>
+                <li>OOP</li>
+                <li>Enkapsulasi</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== GitHub ===== -->
+      <section class="section" id="github" aria-labelledby="github-title">
+        <div class="container section__grid">
+          <h2 class="section__title" id="github-title">Aktivitas GitHub</h2>
+          <div class="section__body gh reveal">
+            <p class="gh__total" id="gh-total">Memuat aktivitas…</p>
+
+            <div class="gh__scroll" id="gh-scroll">
+              <div class="gh__inner">
+                <div class="gh__months" id="gh-months" aria-hidden="true"></div>
+                <div class="gh__grid" id="gh-grid"></div>
+              </div>
             </div>
+
+            <div class="gh__legend" aria-hidden="true">
+              <span>Sedikit</span>
+              <span class="gh__cell" data-level="0"></span>
+              <span class="gh__cell" data-level="1"></span>
+              <span class="gh__cell" data-level="2"></span>
+              <span class="gh__cell" data-level="3"></span>
+              <span class="gh__cell" data-level="4"></span>
+              <span>Banyak</span>
+            </div>
+
+            <p class="gh__status" id="gh-status" role="status"></p>
+          </div>
         </div>
+      </section>
 
-        <div class="box1">
-            <h2>Tentang saya</h2>
-            <p>Halo! Saya sedang belajar pemrograman dari dasar. Saat ini fokus ke HTML, CSS, dan Java. Saya suka
-                membuat
-                hal kecil yang benar-benar jalan, lalu memperbaikinya sedikit demi sedikit.</p>
+      <!-- ===== Kontak ===== -->
+      <section class="section" id="kontak" aria-labelledby="kontak-title">
+        <div class="container section__grid">
+          <h2 class="section__title" id="kontak-title">Personal contact</h2>
+          <ul class="section__body contact">
+            <li class="reveal" style="--i: 0">
+              <a
+                class="contact__link"
+                href="https://github.com/kudanilllo"
+                target="_blank"
+                rel="noopener"
+              >
+                <i class="fa-brands fa-github" aria-hidden="true"></i>
+                <span>github.com/kudanilllo</span>
+              </a>
+            </li>
+            <li class="reveal" style="--i: 1">
+              <a
+                class="contact__link contact__link--instagram"
+                href="https://www.instagram.com/kudanilllo"
+                target="_blank"
+                rel="noopener"
+              >
+                <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                <span>@kudanilllo</span>
+              </a>
+            </li>
+          </ul>
         </div>
+      </section>
+    </main>
 
-        <div class="box1">
-            <h2>Bahasa yang diketahui</h2>
-
-
-            <i class="fa-brands fa-css"></i>
-
-
-            <i class="fa-brands fa-html5"></i>
-
-
-            <i class="fa-brands fa-java"></i>
-
-
-        </div>
-
-        <div class="box1">
-            <h2>Proyek</h2>
-            <h3>Personal web</h3>
-            <p>Proyek HTML &amp; CSS pertama, dibuat dengan layout Flexbox.</p>
-            <hr>
-            <h3>Sistem ATM Java</h3>
-            <p>Proyek Java OOP dengan enkapsulasi.</p>
-        </div>
-
-        <div class="box1">
-            <h2>Personal contact</h2>
-
-
-            <a class="tombol" href="https://github.com/kudanilllo" target="_blank" rel="noopener">
-                <i class="fa-brands fa-github"></i>
-            </a>
-
-            <a class="tombol" href="https://www.instagram.com/kudanilllo" target="_blank" rel="noopener">
-                <i class="fa-brands fa-instagram"></i>
-            </a>
-
-
-        </div>
-    </div>
-</body>
-
+    <footer class="footer">
+      <div class="container">
+        <p>© <span id="year">2026</span> Akhtar Fauzan</p>
+      </div>
+    </footer>
+  </body>
 </html>
